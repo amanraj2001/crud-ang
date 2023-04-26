@@ -1,0 +1,43 @@
+<p>form-main works!</p>
+
+<div class="container">
+  <form [formGroup]="form">
+    <label for="">id</label>
+    <input type="number" formControlName="id" class="form-control">
+    <label for="">name</label>
+    <input type="text" formControlName="name" class="form-control">
+    <div formGroupName="address">
+      <label for="">state</label>
+      <input type="text" formControlName="state" class="form-control">
+      <label for="">city</label>
+      <input type="text" formControlName="city" class="form-control">
+
+
+    </div>
+    <label for="">phone number</label>
+    <input type="number" formControlName="pnum" class="form-control">
+    <!-- <div formGroupName="relation" >
+      <label for="">relation1</label>
+      <input type="text" formControlName="relation1" class="form-control">
+      <label for="">relation2</label>
+      <input type="text" formControlName="relation2" class="form-control">
+    </div> -->
+<!-- 
+    <ng-container formArrayName="relation" *ngFor="let item of rel.controls;let i = index">
+      <div formGroupName="{{i}}">
+        <label for="">relation1</label>
+      <input type="text" formControlName="relation1" class="form-control">
+      <label for="">relation2</label>
+      <input type="text" formControlName="relation2" class="form-control">
+
+      </div>
+
+    </ng-container> -->
+    <button class="btn btn-primary" (click)="add()">Add</button>
+
+
+
+    {{form.value|json}}
+  </form>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,14 @@
+<p>list works!</p>
+<table>
+<tr *ngFor="let item of arrdata;let i= index">
+  <td>{{item.id}}</td>
+  <td>{{item.name}}</td>
+  <td>{{item.address.state}}</td>
+  <ng-container *ngFor="let val of item.relation">
+
+    <td>{{val.relation1}}</td>
+  </ng-container>
+  <button (click)="del(i)">del</button>
+  <button (click)="patch(i)">Patch</button>
+</tr>
+</table>
